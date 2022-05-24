@@ -1,0 +1,11 @@
+.header {
+    color: white;
+    background-color: black;
+    position: relative;
+    height: 6rem;
+    
+    .title {
+        @include center;
+        text-transform: uppercase;
+    }
+}

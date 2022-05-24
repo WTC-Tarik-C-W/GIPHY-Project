@@ -1,0 +1,24 @@
+nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include respond(desktop) {
+        display: none;
+    }
+
+    i {
+        font-size: 3rem;
+        text-align: center;
+        padding: 2rem;
+        border-top: .3rem solid grey;
+
+        :focus {
+            border-color: blue;
+        }
+    }
+
+    .selected {
+        color: red;
+        border-top-color: blue;
+    }
+}

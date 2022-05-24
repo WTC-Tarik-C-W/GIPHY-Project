@@ -1,0 +1,59 @@
+main {
+    background-color: lightgrey;
+
+    // sections side by side when desktop
+    @include respond(desktop) {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+    }
+
+    section {
+        padding: 2rem;
+        @include respond(desktop) {
+            margin: 2rem 0;
+            padding: 0 2rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .hidden-section {
+        // Selectively hidden when mobile
+        display: none;
+
+        // All visible when desktop
+        @include respond(desktop) {
+            display: inline-block;
+        }
+    }
+
+    .finder {
+        &__images {
+            grid-template-columns: repeat(2, 1fr);
+
+            // Wider grid when desktop
+            @include respond(desktop) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @include respond(desktop) {
+            border-left: solid .1rem grey;
+            border-right: solid .1rem grey;
+        }
+    }
+
+    .trending {
+        &__images {
+            grid-template-columns: repeat(2, 1fr);
+
+            // Wider grid when desktop
+            @include respond(desktop) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

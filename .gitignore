@@ -1,6 +1,5 @@
 node_modules/
 sass/
 
-css/fonts/
 css/*.css
 !/css/style.css

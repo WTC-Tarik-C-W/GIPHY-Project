@@ -10,15 +10,11 @@ nav {
         font-size: 3rem;
         text-align: center;
         padding: 2rem;
-        border-top: .3rem solid grey;
-
-        :focus {
-            border-color: blue;
-        }
     }
 
     .selected {
         color: red;
-        border-top-color: blue;
+        border-top: solid 1rem blue;
+        background-color: lightgrey;
     }
 }

@@ -93,13 +93,11 @@ nav {
   nav i {
     font-size: 3rem;
     text-align: center;
-    padding: 2rem;
-    border-top: .3rem solid grey; }
-    nav i :focus {
-      border-color: blue; }
+    padding: 2rem; }
   nav .selected {
     color: red;
-    border-top-color: blue; }
+    border-top: solid 1rem blue;
+    background-color: lightgrey; }
 
 main {
   background-color: lightgrey; }

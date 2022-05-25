@@ -45,7 +45,9 @@ body {
   width: 10rem;
   padding: 1rem;
   margin: 1rem calc(50% - 5rem);
-  text-transform: uppercase; }
+  letter-spacing: .2rem;
+  font-weight: 600;
+  font-size: 3rem; }
 
 .images {
   display: grid;

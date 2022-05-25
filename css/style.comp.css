@@ -32,6 +32,10 @@ body {
   box-sizing: border-box;
   padding: 1rem; }
 
+*:focus {
+  outline: solid .5rem green;
+  z-index: 100; }
+
 .hidden {
   display: none; }
 
@@ -90,14 +94,16 @@ nav {
   @media only screen and (min-width: 75em) {
     nav {
       display: none; } }
+  nav button:hover, nav button:focus {
+    background-color: lightgrey; }
+  nav button.selected {
+    color: red;
+    border-top: solid 1rem blue;
+    background-color: lightgrey; }
   nav i {
     font-size: 3rem;
     text-align: center;
     padding: 2rem; }
-  nav .selected {
-    color: red;
-    border-top: solid 1rem blue;
-    background-color: lightgrey; }
 
 main {
   background-color: lightgrey; }

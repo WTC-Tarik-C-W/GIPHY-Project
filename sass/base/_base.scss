@@ -14,3 +14,8 @@ body {
     box-sizing: border-box;
     padding: 1rem;
 }
+
+*:focus {
+    outline: solid .5rem green;
+    z-index: 100;
+}

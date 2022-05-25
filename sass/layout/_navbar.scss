@@ -6,15 +6,22 @@ nav {
         display: none;
     }
 
+    button {
+        &:hover,
+        &:focus {
+            background-color: lightgrey;
+        }
+
+        &.selected {
+            color: red;
+            border-top: solid 1rem blue;
+            background-color: lightgrey;
+        }
+    }
+
     i {
         font-size: 3rem;
         text-align: center;
         padding: 2rem;
-    }
-
-    .selected {
-        color: red;
-        border-top: solid 1rem blue;
-        background-color: lightgrey;
     }
 }

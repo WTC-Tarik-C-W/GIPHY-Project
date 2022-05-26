@@ -49,7 +49,11 @@
       <!-- Finder Section -->
       <section class="finder hidden-section">
         <h2 class="finder__title">Finder</h2>
-        <input type="text" class="searchbar finder__searchbar" placeholder="Search...">
+        <form id="search-form">
+          <label for="searchbar">Search</label>
+          <input type="text" class="searchbar finder__searchbar" name="searchbar" id="searchbar">
+          <input type="submit" value="Search">
+        </form>
 
         <!-- Notifications -->
         <div class="notification finder__notification--loading">

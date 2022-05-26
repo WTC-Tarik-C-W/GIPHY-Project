@@ -25,7 +25,8 @@ const secFinder = document.querySelector('.finder');
 const secTrending = document.querySelector('.trending');
 
 const nextButtons = document.querySelectorAll('.button-next')
-const searchbar = document.querySelector('.finder__searchbar');
+const searchbar = document.getElementById('searchbar');
+const form = document.getElementById('search-form');
 
 
 // Navbar
@@ -61,22 +62,12 @@ nextButtons.forEach((button) => {
 });
 
 
-// Searchbar auto searcher
-searchbar.addEventListener('input', async () => {
-    // Wait and check if continued typing before fetching
-    try {
-        const newSearch = searchbar.value;
-        setTimeout(() => {
-            if(newSearch == searchbar.value) {
-                currentSearch = newSearch || search; // If searbar empty, go by default
-                addImgs('finder', currentSearch);
-                offset['search'] = 0; // Reset Offset
-            };
-        },
-        500);
-    } catch(err) {
-        console.error(err);
-    }
+// Searchbar form submit
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    currentSearch = searchbar.value || search; // If searbar empty, go by default
+    addImgs('finder', currentSearch);
+    offset['search'] = 0; // Reset Offset
 });
 
 

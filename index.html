@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/style.css" />
-    <!-- Menu Icons: Uncomment when developing -->
-    <!-- <link rel="stylesheet" href="css/icon-font.css">
-    <link rel="stylesheet" href="css/icon-music-font.css"> -->
     <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/dd3a7b9a45.js" crossorigin="anonymous"></script>
     <title>Giphy Project</title>
   </head>
   <body>
@@ -19,9 +17,15 @@
 
     <!-- Navigation -->
     <nav class="nav">
-      <i class="icon-music-shuffle-button selected" id="nav__icon--random"></i>
-      <i class="icon-basic-magnifier" id="nav__icon--finder"></i>
-      <i class="icon-basic-heart" id="nav__icon--trending"></i>
+      <button aria-label="random" class="selected" id="nav__icon--random">
+        <i class="fa-solid fa-shuffle"></i>
+      </button>
+      <button aria-label="finder" id="nav__icon--finder">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <button aria-label="trending" id="nav__icon--trending">
+        <i class="fa-solid fa-arrow-trend-up"></i>
+      </button>
     </nav>
 
     <main>

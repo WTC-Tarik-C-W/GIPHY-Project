@@ -122,11 +122,11 @@ main {
     main section h2 {
       font-size: 3rem;
       margin-bottom: 2rem; }
-  main .hidden-section {
-    display: none; }
-    @media only screen and (min-width: 75em) {
-      main .hidden-section {
-        display: inline-block; } }
+    main section.hidden-section {
+      display: none; }
+      @media only screen and (min-width: 75em) {
+        main section.hidden-section {
+          display: inline-block; } }
   main .finder__images {
     grid-template-columns: repeat(2, 1fr); }
     @media only screen and (min-width: 75em) {

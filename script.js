@@ -16,13 +16,13 @@ const offset = {
 };
 
 // HTML Objects
-const navRandom = document.querySelector('#nav__icon--random');
-const navFinder = document.querySelector('#nav__icon--finder');
-const navTrending = document.querySelector('#nav__icon--trending');
+const navRandom = document.getElementById('nav__icon--random');
+const navFinder = document.getElementById('nav__icon--finder');
+const navTrending = document.getElementById('nav__icon--trending');
 
-const secRandom = document.querySelector('.random');
-const secFinder = document.querySelector('.finder');
-const secTrending = document.querySelector('.trending');
+const secRandom = document.getElementById('random');
+const secFinder = document.getElementById('finder');
+const secTrending = document.getElementById('trending');
 
 const nextButtons = document.querySelectorAll('.button-next')
 const searchbar = document.getElementById('searchbar');

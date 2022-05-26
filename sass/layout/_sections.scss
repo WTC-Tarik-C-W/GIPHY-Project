@@ -18,15 +18,15 @@ main {
             font-size: 3rem;
             margin-bottom: 2rem;
         }
-    }
 
-    .hidden-section {
-        // Selectively hidden when mobile
-        display: none;
-
-        // All visible when desktop
-        @include respond(desktop) {
-            display: inline-block;
+        &.hidden-section {
+            // Selectively hidden when mobile
+            display: none;
+    
+            // All visible when desktop
+            @include respond(desktop) {
+                display: inline-block;
+            }
         }
     }
 
@@ -55,5 +55,5 @@ main {
                 grid-template-columns: 1fr;
             }
         }
-    }
+    }    
 }

@@ -1,0 +1,5 @@
+node_modules/
+sass/
+
+css/*.css
+!/css/style.css

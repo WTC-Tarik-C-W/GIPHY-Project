@@ -117,13 +117,12 @@ main {
       display: grid;
       grid-template-columns: 1fr 4fr 1fr; } }
   main section {
-    padding: 2rem;
-    overflow-y: scroll;
-    height: calc(100vh - 15rem); }
+    padding: 2rem; }
     @media only screen and (min-width: 75em) {
       main section {
         margin: 2rem 0;
         padding: 0 2rem;
+        overflow-y: scroll;
         height: calc(100vh - 11rem); } }
     main section h2 {
       font-size: 3rem;

@@ -30,7 +30,7 @@
 
     <main>
       <!-- Random Section -->
-      <section class="random">
+      <section class="random" id="random">
         <h2 class="random__title">Random</h2>
         
         <!-- Notifications -->
@@ -47,9 +47,14 @@
       </section>
 
       <!-- Finder Section -->
-      <section class="finder hidden-section">
+      <section class="finder hidden-section" id="finder">
         <h2 class="finder__title">Finder</h2>
-        <input type="text" class="searchbar finder__searchbar" placeholder="Search...">
+
+        <form id="search-form">
+          <label for="searchbar">Searchbar</label>
+          <input type="text" class="searchbar finder__searchbar" name="searchbar" id="searchbar">
+          <input type="submit" value="Search">
+        </form>
 
         <!-- Notifications -->
         <div class="notification finder__notification--loading">
@@ -65,7 +70,7 @@
       </section>
 
       <!-- Trending Section -->
-      <section class="trending hidden-section">
+      <section class="trending hidden-section" id="trending">
         <h2 class="trending__title">Trending</h2>
 
         <!-- Notifications -->

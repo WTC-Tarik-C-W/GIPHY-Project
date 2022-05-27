@@ -24,6 +24,7 @@ const secRandom = document.getElementById('random');
 const secFinder = document.getElementById('finder');
 const secTrending = document.getElementById('trending');
 
+const backButtons = document.querySelectorAll('.button-back')
 const nextButtons = document.querySelectorAll('.button-next')
 const searchbar = document.getElementById('searchbar');
 const form = document.getElementById('search-form');

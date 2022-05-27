@@ -90,9 +90,11 @@ const addImgs = async function(type, search = '', offset = 0, limit = 12) {
     // Section specific HTML Objects - Before try/catch so can be used in error
         const error = document.querySelector(`.${type}__notification--error`);
         const loading = document.querySelector(`.${type}__notification--loading`);
+        const loaded = document.querySelector(`.${type}__notification--loaded`);
         const container = document.querySelector(`.${type}__images`);
     try {
         error.classList.add('hidden');
+        loaded.classList.add('hidden');
         loading.classList.remove('hidden');
         if (type == 'finder') type = 'search'; // Translated to work with fetch request
         container.innerHTML = ''; // Clear container
@@ -104,9 +106,11 @@ const addImgs = async function(type, search = '', offset = 0, limit = 12) {
             container.append(image); // Add to container
         };
         loading.classList.add('hidden');
+        loaded.classList.remove('hidden');
     } catch(err) {
         console.error(err);
         loading.classList.add('hidden');
+        loaded.classList.add('hidden');
         error.classList.remove('hidden');
     }
 };

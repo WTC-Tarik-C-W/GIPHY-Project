@@ -1,4 +1,17 @@
-// Hide an Object
+// Hide an Object but not from a screen reader
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+}
+
+// Hide an Object completely
 .hidden {
-    display: none;
+    display: none !important;
 }

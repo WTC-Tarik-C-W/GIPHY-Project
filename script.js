@@ -65,8 +65,10 @@ nextButtons.forEach((button) => {
 
         offset[type] += 12; // Increase offset
 
-        const backBtn = document.getElementById(`${type}_button-back`)
-        backBtn.classList.remove('hidden') // Reveal Back Button
+        if (type != 'random') {
+            const backBtn = document.getElementById(`${type}_button-back`)
+            backBtn.classList.remove('hidden') // Reveal Back Button
+        }
 
         addImgs(type, currentSearch, offset[type]);
     });
@@ -97,7 +99,7 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
     currentSearch = searchbar.value || search; // If searbar empty, go by default
     addImgs('finder', currentSearch);
-    offset['search'] = 0; // Reset Offset
+    offset['finder'] = 0; // Reset Offset
     backFinder.classList.add('hidden');
     nextFinder.classList.remove('hidden'); // Reseting Back/Next Buttons
 });
@@ -134,7 +136,6 @@ const addImgs = async function(type, search = '', offset = 0, limit = 12) {
         const data = await getGif(type, search, offset, limit);
         if (data[0].length == undefined) {
             for (const gif of data) {
-                console.log(data);
                 const image = document.createElement('img');
                 image.src = `https://media4.giphy.com/media/${gif.id}/giphy.gif`; // Image address
                 image.alt = gif.title ?? `Untitled ${type} gif`;

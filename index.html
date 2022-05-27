@@ -43,17 +43,17 @@
 
         <!-- Images Grid Container -->
         <div class="images random__images"></div>
-        <button class="button-next random__button--next" id="random_button-next">Next</button>
+        <button class="button-next random__button--next" id="random_button-next" aria-label="Next random gifs">Next</button>
       </section>
 
       <!-- Finder Section -->
       <section class="finder hidden-section" id="finder">
         <h2 class="finder__title">Finder</h2>
 
-        <form id="search-form">
-          <label for="searchbar">Searchbar</label>
-          <input type="text" class="searchbar finder__searchbar" name="searchbar" id="searchbar">
-          <input type="submit" value="Search">
+        <form class="search-form" id="search-form">
+          <label class="search-form__label" for="searchbar">Searchbar</label>
+          <input type="text" class="search-form__searchbar finder__searchbar" name="searchbar" id="searchbar">
+          <input class="search-form__submit" type="submit" value="Search">
         </form>
 
         <!-- Notifications -->
@@ -66,7 +66,7 @@
 
         <!-- Images Grid Container -->
         <div class="images finder__images"></div>
-        <button class="button-next random__button--next" id="finder_button-next">More</button>
+        <button class="button-next random__button--next" id="finder_button-next" aria-label="More searched gifs">More</button>
       </section>
 
       <!-- Trending Section -->
@@ -83,7 +83,7 @@
 
         <!-- Images Grid Container -->
         <div class="images trending__images"></div>
-        <button class="button-next random__button--next" id="trending_button-next">More</button>
+        <button class="button-next random__button--next" id="trending_button-next" aria-label="More trending gifs">More</button>
       </section>
     </main>
   </body>

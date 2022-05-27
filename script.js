@@ -24,9 +24,16 @@ const secRandom = document.getElementById('random');
 const secFinder = document.getElementById('finder');
 const secTrending = document.getElementById('trending');
 
+const backButtons = document.querySelectorAll('.button-back')
 const nextButtons = document.querySelectorAll('.button-next')
+
 const searchbar = document.getElementById('searchbar');
 const form = document.getElementById('search-form');
+
+const backFinder = document.getElementById('finder_button-back');
+const nextFinder = document.getElementById('finder_button-next');
+
+const emptyFinder = document.getElementById('finder__notification--empty')
 
 
 // Navbar
@@ -50,24 +57,51 @@ navbar(navFinder, secFinder);
 navbar(navTrending, secTrending);
 
 
-// Reset Random Giph
+// Reset Random Gif or get more Gifs offset
 nextButtons.forEach((button) => {
     button.addEventListener('click', () => {
         // Get type
         const type = button.id.replace('_button-next', '');
 
         offset[type] += 12; // Increase offset
+
+        if (type != 'random') {
+            const backBtn = document.getElementById(`${type}_button-back`)
+            backBtn.classList.remove('hidden') // Reveal Back Button
+        }
+
         addImgs(type, currentSearch, offset[type]);
     });
 });
 
+
+// Go back to previous Gifs offset
+backButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        // Get type
+        const type = button.id.replace('_button-back', '');
+
+        offset[type] -= 12; // Decrease offset
+        if (offset[type] <= 0) {
+            offset[type] = 0;
+            button.classList.add('hidden') // Hide back button
+        };
+
+        const nextBtn = document.getElementById(`${type}_button-next`)
+        nextBtn.classList.remove('hidden') // Reveal Next Button
+
+        addImgs(type, currentSearch, offset[type]);
+    });
+});
 
 // Searchbar form submit
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     currentSearch = searchbar.value || search; // If searbar empty, go by default
     addImgs('finder', currentSearch);
-    offset['search'] = 0; // Reset Offset
+    offset['finder'] = 0; // Reset Offset
+    backFinder.classList.add('hidden');
+    nextFinder.classList.remove('hidden'); // Reseting Back/Next Buttons
 });
 
 
@@ -93,17 +127,23 @@ const addImgs = async function(type, search = '', offset = 0, limit = 12) {
         const loaded = document.querySelector(`.${type}__notification--loaded`);
         const container = document.querySelector(`.${type}__images`);
     try {
+        emptyFinder.classList.add('hidden'); // No longer empty set
         error.classList.add('hidden');
         loaded.classList.add('hidden');
         loading.classList.remove('hidden');
         if (type == 'finder') type = 'search'; // Translated to work with fetch request
         container.innerHTML = ''; // Clear container
         const data = await getGif(type, search, offset, limit);
-        for (const gif of data) {
-            const image = document.createElement('img');
-            image.src = `https://media4.giphy.com/media/${gif.id}/giphy.gif`; // Image address
-            image.alt = gif.title ?? 'Giphy gif';
-            container.append(image); // Add to container
+        if (data[0].length == undefined) {
+            for (const gif of data) {
+                const image = document.createElement('img');
+                image.src = `https://media4.giphy.com/media/${gif.id}/giphy.gif`; // Image address
+                image.alt = gif.title ?? `Untitled ${type} gif`;
+                container.append(image); // Add to container
+            };
+        } else {
+            nextFinder.classList.add('hidden');
+            emptyFinder.classList.remove('hidden'); // Error: empty set
         };
         loading.classList.add('hidden');
         loaded.classList.remove('hidden');

@@ -36,10 +36,10 @@
         <!-- Notifications -->
         <div class="notification random__notification--loading" role="alert" aria-live="assertive">
           <span class="notification__loading-icon" aria-hidden="true">🔆</span>
-          Random Giphy will be here in a jiffy ...
+          Random Gif will be here in a jiffy ...
         </div>
         <div class="notification random__notification--loaded visually-hidden hidden" role="alert" aria-live="assertive">
-          Random Giphy loaded!
+          Random Gif loaded!
         </div>
         <div class="notification random__notification--error hidden" role="alert" aria-live="assertive">
           <span class="notification__error-icon" aria-hidden="true">⚠️</span>
@@ -48,7 +48,11 @@
 
         <!-- Images Grid Container -->
         <div class="images random__images"></div>
-        <button class="button-next random__button--next" id="random_button-next" aria-label="Next random gif">Next</button>
+
+        <!-- More button -->
+        <div class="button-container">
+          <button class="button-next random__button--next" id="random_button-next" aria-label="Next random gif">Next</button>
+        </div>
       </section>
 
       <!-- Finder Section -->
@@ -64,10 +68,14 @@
         <!-- Notifications -->
         <div class="notification finder__notification--loading" role="alert" aria-live="assertive">
           <span class="notification__loading-icon" aria-hidden="true">🔆</span>
-          Searched Giphy's will be here in a jiffy ...
+          Searched Gif's will be here in a jiffy ...
         </div>
         <div class="notification finder__notification--loaded visually-hidden hidden" role="alert" aria-live="assertive">
-          Searched Giphy's loaded!
+          Searched Gif's loaded!
+        </div>
+        <div class="notification finder__notification--empty" id="finder__notification--empty" role="alert" aria-live="assertive">
+          <span class="notification__empty-icon" aria-hidden="true">🔚</span>
+          Sorry, we can't find any more Gifs!
         </div>
         <div class="notification finder__notification--error hidden" role="alert" aria-live="assertive">
           <span class="notification__error-icon" aria-hidden="true">⚠️</span>
@@ -76,7 +84,12 @@
 
         <!-- Images Grid Container -->
         <div class="images finder__images"></div>
-        <button class="button-next random__button--next" id="finder_button-next" aria-label="More searched gifs">More</button>
+
+        <!-- Back and More Buttons -->
+        <div class="button-container">
+          <button class="button-back finder__button--back hidden" id="finder_button-back" aria-label="Back to previous searched gifs">Back</button>
+          <button class="button-next finder__button--next" id="finder_button-next" aria-label="More searched gifs">More</button>
+        </div>
       </section>
 
       <!-- Trending Section -->
@@ -86,10 +99,10 @@
         <!-- Notifications -->
         <div class="notification trending__notification--loading" role="alert" aria-live="assertive">
           <span class="notification__loading-icon" aria-hidden="true">🔆</span>
-          Trending Giphy's will be here in a jiffy ...
+          Trending Gif's will be here in a jiffy ...
         </div>
         <div class="notification trending__notification--loaded visually-hidden hidden" role="alert" aria-live="assertive">
-          Trending Giphy's loaded!
+          Trending Gif's loaded!
         </div>
         <div class="notification trending__notification--error hidden" role="alert" aria-live="assertive">
           <span class="notification__error-icon" aria-hidden="true">⚠️</span>
@@ -98,7 +111,12 @@
 
         <!-- Images Grid Container -->
         <div class="images trending__images"></div>
-        <button class="button-next random__button--next" id="trending_button-next" aria-label="More trending gifs">More</button>
+
+        <!-- Back and More Buttons -->
+        <div class="button-container button-trending">
+          <button class="button-back trending__button--back hidden" id="trending_button-back" aria-label="Back to previous trending gifs">Back</button>
+          <button class="button-next trending__button--next" id="trending_button-next" aria-label="More trending gifs">More</button>
+        </div>
       </section>
     </main>
   </body>

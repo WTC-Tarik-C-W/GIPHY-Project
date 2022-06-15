@@ -5,8 +5,8 @@
     font-size: 1.5rem;
     font-weight: 700;
     padding: 1rem;
-    border: .1rem dashed grey;
-    background-color: white;
+    border: .1rem dashed $grey;
+    background-color: $white;
 
     span {
         display: inline-block;

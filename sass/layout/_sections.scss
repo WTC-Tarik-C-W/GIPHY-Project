@@ -1,5 +1,5 @@
 main {
-    background-color: lightgrey;
+    background-color: $lightgrey;
 
     // sections side by side when desktop
     @include respond(desktop) {
@@ -43,8 +43,8 @@ main {
         }
         
         @include respond(desktop) {
-            border-left: solid .1rem grey;
-            border-right: solid .1rem grey;
+            border-left: solid .1rem $grey;
+            border-right: solid .1rem $grey;
         }
     }
 

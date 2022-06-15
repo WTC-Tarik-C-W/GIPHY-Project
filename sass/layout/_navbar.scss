@@ -10,13 +10,13 @@ nav {
     button {
         &:hover,
         &:focus {
-            background-color: lightgrey;
+            background-color: $lightgrey;
         }
 
         &.selected {
-            color: red;
-            border-top: solid 1rem blue;
-            background-color: lightgrey;
+            color: $red;
+            border-top: solid 1rem $blue;
+            background-color: $lightgrey;
         }
     }
 

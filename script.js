@@ -138,7 +138,8 @@ const addImgs = async function(type, search = '', offset = 0, limit = 12) {
             for (const gif of data) {
                 const image = document.createElement('img');
                 image.src = `https://media4.giphy.com/media/${gif.id}/giphy.gif`; // Image address
-                image.alt = gif.title ?? `Untitled ${type} gif`;
+                if (gif.title.replaceAll(" ","") == "") gif.title = ""; // If title just spaces then title empty
+                image.alt = gif.title || `Untitled ${type} gif`; // If title empty, alt = placeholder
                 container.append(image); // Add to container
             };
         } else {

@@ -94,6 +94,7 @@ backButtons.forEach((button) => {
     });
 });
 
+
 // Searchbar form submit
 form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -134,7 +135,7 @@ const addImgs = async function(type, search = '', offset = 0, limit = 12) {
         if (type == 'finder') type = 'search'; // Translated to work with fetch request
         container.innerHTML = ''; // Clear container
         const data = await getGif(type, search, offset, limit);
-        if (data[0].length == undefined) {
+        if (data[0].length == undefined) { // Check for if no array of data is returned
             for (const gif of data) {
                 const image = document.createElement('img');
                 image.src = `https://media4.giphy.com/media/${gif.id}/giphy.gif`; // Image address
@@ -161,5 +162,3 @@ const addImgs = async function(type, search = '', offset = 0, limit = 12) {
 addImgs('random');
 addImgs('finder', search);
 addImgs('trending');
-
-

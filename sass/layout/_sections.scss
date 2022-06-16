@@ -1,7 +1,7 @@
 main {
     background-color: $lightgrey;
 
-    // sections side by side when desktop
+    // Sections side by side when desktop
     @include respond(desktop) {
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;
@@ -21,6 +21,7 @@ main {
             margin-bottom: .5rem;
         }
 
+
         &.hidden-section {
             // Selectively hidden when mobile
             display: none;
@@ -32,6 +33,7 @@ main {
         }
     }
 
+    
     .finder {
         &__images {
             grid-template-columns: repeat(2, 1fr);

@@ -1,4 +1,5 @@
 .button {
+    // Button containers
     &-container {
         display: flex;
         justify-content: center;
@@ -11,6 +12,8 @@
         }
     }
 
+    
+    // Buttons
     &-next,
     &-back {
         background-color: $blue;
